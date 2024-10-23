@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Mood Master: AI-Powered Mood Tracking and Mental Wellness App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+Mood Master is an innovative application designed to help individuals track their emotional well-being and gain personalized insights into their mental health. In a world where stress, anxiety, and depression are increasingly common, Mood Master offers an accessible, affordable alternative to traditional therapy, empowering users to manage their mental health proactively.
 
-In the project directory, you can run:
+### What We're Solving
 
-### `npm start`
+- Difficulty in tracking emotional states over time
+- Need for personalized mental health insights
+- Lack of accessible, affordable mental health support
+- Desire for self-managed mental wellness solutions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Daily Mood Logging**: Quick emoji-based mood tracking
+2. **Journaling with AI Insights**: Personalized feedback on journal entries
+3. **Calendar View**: Visual representation of mood trends
+4. **Activity Tracking**: Log sleep, exercise, and nutrition habits
+5. **Self-Care Recommendations**: AI-generated wellness suggestions
+6. **Anonymous Community Support**: Connect with others on similar journeys
+7. **Rewards System**: Earn achievements for consistent use
 
-### `npm test`
+## Prototype Demonstration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://drive.google.com/file/d/1EZ7mZg06TZ_wrCab676SU1bYDLILGFPI/view?usp=sharing
 
-### `npm run build`
+## User Experience and Design Elements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Mood Master is designed with user-centric principles to ensure a smooth, intuitive experience:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Clean, Calming Interface**: Soft color palette and minimalist design to reduce cognitive load
+- **Quick Daily Check-ins**: Emoji-based mood logging for effortless daily tracking
+- **Personalized Dashboard**: At-a-glance view of mood trends, insights, and recommendations
+- **Customizable Notifications**: Gentle reminders for journaling and self-care activities
+- **Privacy-First Approach**: Secure login, data encryption, and anonymous community participation options
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Our design incorporates elements such as:
+- Soothing color schemes to promote calmness
+- Intuitive icons for easy navigation
+- Responsive layouts for seamless use across devices
+- Progress visualizations with graphs to encourage consistent use
 
-### `npm run eject`
+## Team Vibe Tribe
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Deepika**: Project Manager
+- **Varsha**: Developer
+- **Ramya**: Designer
+- **Melat**: Tester
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Frontend: React
+- Backend: Django, FastAPI
+- Database: PostgreSQL
+- AI/ML/GPT: Custom models for insights and recommendations
+- Additional: Push notification, Email notification, Plugins etc..
