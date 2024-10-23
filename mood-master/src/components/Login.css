@@ -13,6 +13,13 @@
   .login-container p {
     color: rgba(99, 43, 108, 1); /* Change to your desired font color */
   }
+
+  .login-logo {
+    padding-top: 50px;
+    width: 500px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the logo */
+  }
   
   .login-container a {
     color: rgba(99, 43, 108, 1); /* Change link color as well */

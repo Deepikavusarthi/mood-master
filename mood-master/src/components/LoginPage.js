@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '/Users/varshachintalapati/mood-master/src/components/images/logo.jpeg';
+import logo from '/Users/varshachintalapati/mood-master/src/components/images/logo.png';
 import './Login.css';
 
 const LoginPage = () => {
@@ -15,7 +15,7 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
-    <img src={logo} alt="Mood Tracker Logo" className="navbar-logo" />
+    <img src={logo} alt="Mood Tracker Logo" className="login-logo" />
     <p>The best place to start your mental health journey</p>
       <h2>Login</h2>
       <input

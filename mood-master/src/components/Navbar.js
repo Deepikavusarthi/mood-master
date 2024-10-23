@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
-import logo from '/Users/varshachintalapati/mood-master/src/components/images/logo.jpeg';
+import logo from '/Users/varshachintalapati/mood-master/src/components/images/logo.png';
 
 const Navbar = () => {
   return (
