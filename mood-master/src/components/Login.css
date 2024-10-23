@@ -1,0 +1,25 @@
+.login-container {
+    padding: 20px;
+    border-radius: 5px;
+    width: 700px; /* Example width */
+    margin: auto; /* Center the container */
+    margin-top: 100px; /* Space from the top */
+    text-align: center; /* Center the text */
+  }
+  
+  .login-container h2,
+  .login-container label,
+  .login-container button,
+  .login-container p {
+    color: rgba(99, 43, 108, 1); /* Change to your desired font color */
+  }
+  
+  .login-container a {
+    color: rgba(99, 43, 108, 1); /* Change link color as well */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .login-container a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  

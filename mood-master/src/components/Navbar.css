@@ -1,0 +1,38 @@
+.navbar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .navbar-logo {
+    height: 150px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+  }
+
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around; /* Horizontally space the items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-list li {
+    display: inline;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-list a:hover {
+    color: #007bff;
+  }
+  
