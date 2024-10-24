@@ -14,6 +14,10 @@
     color: rgba(99, 43, 108, 1); 
   }
 
+  .login-container label {
+    color: black; 
+  }
+
   .login-logo {
     padding-top: 50px;
     width: 500px; 
@@ -57,5 +61,23 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .new-user-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px; 
+}
+.new-user-text {
+  margin-right: 10px; /* Space between text and button */
+}
+.create-account-button {
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px; 
+    color: white; 
+    cursor: pointer; 
+}
+
   
   

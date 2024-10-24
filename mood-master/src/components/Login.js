@@ -8,6 +8,10 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const handleCreateAccountClick = () => {
+    navigate('/create-account'); // Change the route as needed
+};
+
   const handleLogin = () => {
     // Handle login logic here
     navigate("/tracker");  // Navigate to tracker page after login
@@ -40,7 +44,11 @@ const LoginPage = () => {
     </div>
     <button type="submit">Login</button>
   </form>
-      <h5>New User? <Link to="/register">Create an Account</Link></h5>
+    <div className="new-user-container">
+      <p>New User?</p>
+      <button className="create-account-button" onClick={handleCreateAccountClick}>
+          Create Account</button>
+    </div>
     </div>
   );
 };

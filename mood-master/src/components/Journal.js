@@ -1,7 +1,7 @@
 // components/JournalPage.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './JournalPage.css';
+import './Journal.css';
 
 const JournalPage = () => {
   const [entry, setEntry] = useState("");

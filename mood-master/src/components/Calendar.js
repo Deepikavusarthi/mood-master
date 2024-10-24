@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import './CalendarPage.css'; 
+import './Calendar.css'; 
 
 const CalendarPage = () => {
   const [date, setDate] = useState(new Date());
@@ -31,8 +31,7 @@ const CalendarPage = () => {
 
   return (
     <div className="calendar-container">
-      <h2>Calendar</h2>
-      <h5>Lets look how your wellness journey recently!</h5>
+      <h3>Lets look how your wellness journey recently!</h3>
       <div className="month-links">
         {months.map((month, index) => (
           <span 
@@ -59,7 +58,7 @@ const CalendarPage = () => {
         </div>
       </div>
       <div className="mood-details">
-        <h3>Details for {formattedDate}</h3>
+        <h4>Details for {formattedDate}</h4>
         <p>Mood: {moodInfo.mood}</p>
         <p>Activities: {moodInfo.activities}</p>
       </div>

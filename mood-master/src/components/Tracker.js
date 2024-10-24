@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './TrackerPage.css';
+import './Tracker.css';
 
 const TrackerPage = () => {
   const [mood, setMood] = useState(null);
