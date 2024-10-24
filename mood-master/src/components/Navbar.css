@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     padding: 1rem;
     border-bottom: 1px solid #ddd;
     position: fixed;
@@ -27,7 +27,7 @@
   
   .nav-list a {
     text-decoration: none;
-    color: #333;
+    color: rgba(99, 43, 108, 1);
     font-weight: bold;
     padding: 0.5rem 1rem;
   }

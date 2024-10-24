@@ -1,6 +1,6 @@
-// components/TrackerPage.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './TrackerPage.css';
 
 const TrackerPage = () => {
   const [mood, setMood] = useState(null);
@@ -10,22 +10,29 @@ const TrackerPage = () => {
     navigate("/journal");
   };
 
+  const handleNavigate = (path) => {
+    navigate(path); // Function to navigate to other activity pages
+  };
+
   return (
-    <div>
+    <div className="tracker-container">
+      <h1>Track Your Activites</h1>
       <h2>How is your mood today?</h2>
-      <div>
-        <button onClick={() => setMood("😢")}>😢</button>
-        <button onClick={() => setMood("🙁")}>🙁</button>
-        <button onClick={() => setMood("😐")}>😐</button>
-        <button onClick={() => setMood("🙂")}>🙂</button>
-        <button onClick={() => setMood("😄")}>😄</button>
+      <div className="mood-buttons">
+        <button className="red-emoji" onClick={() => setMood("😢")}>😢</button>
+        <button className="orange-emoji" onClick={() => setMood("🙁")}>🙁</button>
+        <button className="yellow-emoji" onClick={() => setMood("😐")}>😐</button>
+        <button className="green-emoji" onClick={() => setMood("🙂")}>🙂</button>
+        <button className="darkgreen-emoji" onClick={() => setMood("😄")}>😄</button>
       </div>
-      <div>
+      <div className="activity-buttons">
         <h3>Track Activities</h3>
-        <button>Track Sleep</button>
-        <button>Track Exercise</button>
+        <button className="activity-btn" onClick={() => handleNavigate("/sleep")}>Sleep</button>
+        <button className="activity-btn" onClick={() => handleNavigate("/exercise")}>Exercise</button>
+        <button className="activity-btn" onClick={() => handleNavigate("/nutrition")}>Nutrition</button>
+        <button className="activity-btn" onClick={() => handleNavigate("/self-care")}>Self-Care</button>
       </div>
-      <button onClick={handleJournalClick}>Daily Journal</button>
+      <button className="journal-btn" onClick={handleJournalClick}>Daily Journal</button>
     </div>
   );
 };

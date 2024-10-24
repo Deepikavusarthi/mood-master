@@ -17,21 +17,30 @@ const LoginPage = () => {
     <div className="login-container">
     <img src={logo} alt="Mood Tracker Logo" className="login-logo" />
     <p>The best place to start your mental health journey</p>
-      <h2>Login</h2>
+    <form onSubmit={handleLogin}>
+    <div className="input-group">
+      <label htmlFor="username">Username:</label>
       <input
         type="text"
-        placeholder="Username"
+        id="username"
+        placeholder="Enter your username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
+    </div>
+    <div className="input-group">
+      <label htmlFor="password">Password:</label>
       <input
         type="password"
-        placeholder="Password"
+        id="password"
+        placeholder="Enter your password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Login</button>
-      <p>Don't have an account? <Link to="/register">Create an Account</Link></p>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+      <h5>New User? <Link to="/register">Create an Account</Link></h5>
     </div>
   );
 };

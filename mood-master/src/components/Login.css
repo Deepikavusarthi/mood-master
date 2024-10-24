@@ -7,7 +7,7 @@
     text-align: center; /* Center the text */
   }
   
-  .login-container h2,
+  .login-container h5,
   .login-container label,
   .login-container button,
   .login-container p {
@@ -29,4 +29,33 @@
   .login-container a:hover {
     text-decoration: underline; /* Add underline on hover */
   }
+
+  .input-group {
+    margin-bottom: 20px; /* Space between input groups */
+    text-align: left; /* Align labels and inputs to the left */
+  }
+  
+  .input-group label {
+    display: block; /* Forces label onto its own line */
+    margin-bottom: 5px; /* Adds space between label and input */
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .input-group input {
+    width: 100%; /* Make input take up full width */
+    padding: 8px; /* Add some padding inside the input */
+    border: 1px solid #ccc; /* Border around input */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+  
+  button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
   
