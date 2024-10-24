@@ -1,11 +1,19 @@
 // components/JournalPage.js
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import './JournalPage.css';
 
 const JournalPage = () => {
   const [entry, setEntry] = useState("");
+  const navigate = useNavigate(); 
+
+  const handleSave = () => {
+    // Add your save logic here if needed
+    navigate("/calendar"); // Navigate to the calendar page
+  };
 
   return (
-    <div>
+    <div className="journal-container">
       <h2>Daily Journal</h2>
       <textarea
         value={entry}
@@ -14,7 +22,7 @@ const JournalPage = () => {
         cols="50"
         placeholder="Write about your day..."
       />
-      <button>Save Entry</button>
+      <button onClick={handleSave}>Save Entry</button>
     </div>
   );
 };

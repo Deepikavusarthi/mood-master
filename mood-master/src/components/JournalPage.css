@@ -1,0 +1,38 @@
+.journal-container {
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add some padding */
+    background-color: #fff; /* White background for the journal page */
+  }
+  
+  .journal-container h2 {
+    color: rgba(99, 43, 108, 1); /* Dark font color for the title */
+  }
+  
+  .journal-container textarea {
+    width: 100%; /* Make the textarea take full width */
+    max-width: 600px; /* Set a maximum width for larger screens */
+    padding: 10px; /* Padding inside the textarea */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid rgba(99, 43, 108, 1); /* Border color */
+    margin-bottom: 20px; /* Space between textarea and button */
+    font-size: 16px; /* Font size */
+    resize: none; /* Prevent resizing */
+    display: block;
+  }
+  
+  .journal-container button {
+    background-color: rgba(251, 195, 162, 0.15); /* Light pink background */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    color: rgba(99, 43, 108, 1); /* Dark font color */
+    transition: background-color 0.3s ease; 
+    display: block;
+  }
+  
+  .journal-container button:hover {
+    background-color: rgba(251, 195, 162, 0.25); /* Darker pink on hover */
+  }
+  
