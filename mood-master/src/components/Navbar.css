@@ -9,14 +9,14 @@
   }
 
   .navbar-logo {
-    height: 100px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
+    height: 100px; 
+    width: auto; 
   }
 
   .nav-list {
     list-style-type: none;
     display: flex;
-    justify-content: space-around; /* Horizontally space the items */
+    justify-content: space-around; 
     margin: 0;
     padding: 0;
   }

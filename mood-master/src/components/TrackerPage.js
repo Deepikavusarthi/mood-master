@@ -11,7 +11,9 @@ const TrackerPage = () => {
   };
 
   const handleNavigate = (path) => {
-    navigate(path); // Function to navigate to other activity pages
+    // Function to navigate to other activity pages
+    // these other pages still need to be set up
+    navigate(path); 
   };
 
   return (

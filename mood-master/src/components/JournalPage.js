@@ -8,8 +8,8 @@ const JournalPage = () => {
   const navigate = useNavigate(); 
 
   const handleSave = () => {
-    // Add your save logic here if needed
-    navigate("/calendar"); // Navigate to the calendar page
+    
+    navigate("/calendar"); 
   };
 
   return (

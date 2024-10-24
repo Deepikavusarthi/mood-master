@@ -1,106 +1,106 @@
 .calendar-container {
     padding: 20px;
-    background-color: #fff; /* White background */
+    background-color: #fff; 
   }
 
   .calendar-container h2, .calendar-container h5 {
-    color: rgba(99, 43, 108, 1); /* Dark color for headings */
-    margin: 10px 0; /* Add some margin for spacing */
+    color: rgba(99, 43, 108, 1); 
+    margin: 10px 0; 
 }
   
   .month-links {
     display: flex;
     padding-top: 50px;
     justify-content: center;
-    margin-bottom: 20px; /* Space below month links */
+    margin-bottom: 20px; 
   }
   
   .month-link {
     margin: 0 10px;
     cursor: pointer;
-    color: rgba(99, 43, 108, 1); /* Dark color for the month links */
+    color: rgba(99, 43, 108, 1); 
     font-weight: bold;
   }
   
   .month-link:hover {
-    color: rgba(199, 108, 152, 1); /* Underline on hover */
+    color: rgba(199, 108, 152, 1); 
   }
   
   .month-link.active {
-    color: rgba(199, 108, 152, 1); /* Highlight color for active month */
+    color: rgba(199, 108, 152, 1); 
   }
   
   .calendar-journal-container {
-    display: flex; /* Flex container to align calendar and journal box */
-    justify-content: space-between; /* Space between the two sections */
-    background-color: rgba(251, 195, 162, 0.15); /* Light pink background */
-    padding: 20px; /* Padding around the inner content */
-    border-radius: 10px; /* Rounded corners */
+    display: flex; 
+    justify-content: space-between; 
+    background-color: rgba(251, 195, 162, 0.15); 
+    padding: 20px; 
+    border-radius: 10px; 
     margin-top: 20px;
   }
   
   .calendar {
-    flex: 1; /* Allow the calendar to take available space */
+    flex: 1; 
     min-width: 300px;
     border-radius: 8px;
   }
   
   .journal-entry-box {
-    flex: 0 0 350px; /* Fixed width for journal entry box */
-    border: 1px solid rgba(99, 43, 108, 0.5); /* Border around the box */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the box */
-    margin-left: 10px; /* Space between calendar and journal entry */
-    background-color: #ffffff; /* Light gray background */
+    flex: 0 0 350px; 
+    border: 1px solid rgba(99, 43, 108, 0.5); 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin-left: 10px; 
+    background-color: #ffffff; 
     height: 300;
   }
   
   .journal-entry-box h3 {
-    color: rgba(99, 43, 108, 1); /* Dark color for the journal title */
+    color: rgba(99, 43, 108, 1); 
   }
 
   .journal-entry-box p {
-    color: rgba(199, 108, 152, 1); /* Dark color for journal entry text */
+    color: rgba(199, 108, 152, 1); 
 }
 
   .journal-entry-box {
-    margin-left: 0; /* Remove margin on small screens */
-    margin-top: 20px; /* Space above the journal entry on small screens */
+    margin-left: 0; 
+    margin-top: 20px; 
   }
 
 
-  /* Override month names color */
+  
 .react-calendar__navigation__label {
-    color: rgba(99, 43, 108, 1); /* Month names color */
+    color: rgba(99, 43, 108, 1); 
 }
 
-/* Override navigation arrows color */
+
 .react-calendar__navigation__arrow {
-    color: rgba(99, 43, 108, 1); /* Arrows color */
+    color: rgba(99, 43, 108, 1); 
 }
 
 
-  /* Override calendar numbers color */
+  
 .react-calendar__tile {
-    color: rgba(99, 43, 108, 1); /* Calendar numbers color */
+    color: rgba(99, 43, 108, 1); 
   }
 
   .react-calendar__month-view__month {
-    color: rgba(99, 43, 108, 1); /* Month names color */
+    color: rgba(99, 43, 108, 1);
 }
 
 .react-calendar__month-view__weekdays {
-    color: rgba(99, 43, 108, 1); /* Change this to your desired color */
-    font-weight: bold; /* Optional: Make it bold */
+    color: rgba(99, 43, 108, 1); 
+    font-weight: bold; 
 }
   
-  /* Override selected date color */
+
   .react-calendar__tile--active {
-    background-color: rgba(199, 108, 152, 1); /* Selected date color */
-    color: white; /* Change text color of selected date */
+    background-color: rgba(199, 108, 152, 1); 
+    color: white; 
   }
   
-  /* Optional: Override hover color for better visibility */
+
   .react-calendar__tile:hover {
-    background-color: rgba(251, 195, 162, 0.5); /* Light pink on hover */
+    background-color: rgba(251, 195, 162, 0.5); 
   }

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import './CalendarPage.css'; // Import the new CSS file
+import './CalendarPage.css'; 
 
 const CalendarPage = () => {
   const [date, setDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(date.getMonth());
   
-  // Placeholder data for mood/activity tracking
+
+  //placeholder data
   const moodData = {
     '2024-10-20': { mood: '🙂', activities: 'Sleep, Exercise' },
     '2024-10-21': { mood: '😢', activities: 'Sleep' }
@@ -22,7 +23,7 @@ const CalendarPage = () => {
   const formattedDate = date.toISOString().split('T')[0];
   const moodInfo = moodData[formattedDate] || { mood: 'No data', activities: 'No data' };
 
-  // Months array
+
   const months = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"

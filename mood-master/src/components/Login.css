@@ -1,53 +1,53 @@
 .login-container {
     padding: 20px;
     border-radius: 5px;
-    width: 700px; /* Example width */
-    margin: auto; /* Center the container */
-    margin-top: 100px; /* Space from the top */
-    text-align: center; /* Center the text */
+    width: 700px; 
+    margin: auto; 
+    margin-top: 100px; 
+    text-align: center; 
   }
   
   .login-container h5,
   .login-container label,
   .login-container button,
   .login-container p {
-    color: rgba(99, 43, 108, 1); /* Change to your desired font color */
+    color: rgba(99, 43, 108, 1); 
   }
 
   .login-logo {
     padding-top: 50px;
-    width: 500px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Space below the logo */
+    width: 500px; 
+    height: auto; 
+    margin-bottom: 20px; 
   }
   
   .login-container a {
-    color: rgba(99, 43, 108, 1); /* Change link color as well */
-    text-decoration: none; /* Remove underline */
+    color: rgba(99, 43, 108, 1); 
+    text-decoration: none; 
   }
   
   .login-container a:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline; 
   }
 
   .input-group {
-    margin-bottom: 20px; /* Space between input groups */
-    text-align: left; /* Align labels and inputs to the left */
+    margin-bottom: 20px; 
+    text-align: left; 
   }
   
   .input-group label {
-    display: block; /* Forces label onto its own line */
-    margin-bottom: 5px; /* Adds space between label and input */
+    display: block; 
+    margin-bottom: 5px; 
     font-weight: bold;
     font-size: 14px;
   }
   
   .input-group input {
-    width: 100%; /* Make input take up full width */
-    padding: 8px; /* Add some padding inside the input */
-    border: 1px solid #ccc; /* Border around input */
-    border-radius: 4px; /* Rounded corners */
-    box-sizing: border-box; /* Ensure padding is included in width */
+    width: 100%; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
   }
   
   button {

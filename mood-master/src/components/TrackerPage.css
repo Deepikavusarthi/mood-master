@@ -1,15 +1,15 @@
 .tracker-container {
     text-align: center;
     padding: 20px;
-    background-color: #fff; /* Set background to white */
+    background-color: #fff;
   }
   
   .tracker-container h1, 
   .tracker-container h2  {
-    color: rgba(99, 43, 108, 1); /* Set a dark font color */
+    color: rgba(99, 43, 108, 1); 
   }
   
-  /* Mood Emoji Buttons */
+
   .mood-buttons {
     display: flex;
     justify-content: center;
@@ -27,23 +27,23 @@
   }
   
 .mood-buttons .red-emoji { 
-  background-color: #ff4d4d; /* Red */
+  background-color: #ff4d4d; 
 }
 
 .mood-buttons .orange-emoji {
-  background-color: #ff9933; /* Orange */
+  background-color: #ff9933; 
 }
 
 .mood-buttons .yellow-emoji {
-  background-color: #ffeb3b; /* Yellow */
+  background-color: #ffeb3b; 
 }
 
 .mood-buttons .green-emoji {
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50; 
 }
 
 .mood-buttons .darkgreen-emoji {
-  background-color: #2e7d32; /* Dark Green */
+  background-color: #2e7d32; 
 }
   
 
@@ -67,10 +67,10 @@
   }
   
   .activity-buttons .activity-btn:hover {
-    background-color: rgba(251, 195, 162, 0.15); /* Slightly darker pink on hover */
+    background-color: rgba(251, 195, 162, 0.15);
   }
   
-  /* Journal Button */
+
   .journal-btn {
     margin-top: 30px;
     background-color: rgba(251, 195, 162, 0.15);
@@ -84,6 +84,6 @@
   }
   
   .journal-btn:hover {
-    background-color: rgba(251, 195, 162, 0.15) /* Darker pink on hover */
+    background-color: rgba(251, 195, 162, 0.15) 
   }
   
