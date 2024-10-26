@@ -17,6 +17,10 @@ const CreateAccount = () => {
         navigate("/tracker"); // Redirect to tracker page
     };
 
+    const handleLoginClick = () => {
+        navigate("/"); // Redirect to home page
+    };
+
   return (
     <div className="create-account-container">
       <h2>Start tracking my mood today!</h2>
@@ -45,6 +49,10 @@ const CreateAccount = () => {
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
       <button onClick={handleCreateAccount}>Create Account</button>
+      <div className="existing-user-container">
+        <span>Already have an account?</span>
+        <span className="login-button" onClick={handleLoginClick}>Login</span>
+      </div>
     </div>
   );
 };

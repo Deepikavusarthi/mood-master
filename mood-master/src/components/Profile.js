@@ -9,7 +9,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div>
+    <div style={{color:"black"}}>
       <h2>Profile</h2>
       <p>Username: {userInfo.username}</p>
       <p>Password: {userInfo.password}</p>

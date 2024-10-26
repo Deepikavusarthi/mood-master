@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '/Users/varshachintalapati/mood-master/src/components/images/logo.png';
+import logo from './images/logo.png';
 import './Login.css';
 
 const LoginPage = () => {
@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   const handleCreateAccountClick = () => {
     navigate('/create-account'); // Change the route as needed
-};
+  };
 
   const handleLogin = () => {
     // Handle login logic here
@@ -19,36 +19,36 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
-    <img src={logo} alt="Mood Tracker Logo" className="login-logo" />
-    <p>The best place to start your mental health journey</p>
-    <form onSubmit={handleLogin}>
-    <div className="input-group">
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        placeholder="Enter your username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-    </div>
-    <div className="input-group">
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        placeholder="Enter your password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-    </div>
-    <button type="submit">Login</button>
-  </form>
-    <div className="new-user-container">
-      <p>New User?</p>
-      <button className="create-account-button" onClick={handleCreateAccountClick}>
+      <img src={logo} alt="Mood Tracker Logo" className="login-logo" />
+      <p>The best place to start your mental health journey</p>
+      <form onSubmit={handleLogin}>
+        <div className="input-group">
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <div className="new-user-container">
+        <p>New User?</p>
+        <button className="create-account-button" onClick={handleCreateAccountClick}>
           Create Account</button>
-    </div>
+      </div>
     </div>
   );
 };
