@@ -1,38 +1,48 @@
 .navbar {
-    background-color: #ffffff;
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
+  background-color: #ffffff; /* White background */
+  padding: 1rem 2rem; /* Add padding to create space on both sides */
+  border: none; /* Remove border */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav items */
+  align-items: center;
+}
 
-  .navbar-logo {
-    height: 100px; 
-    width: auto; 
-  }
+.navbar-brand {
+  margin: 0; /* Ensure no extra margin */
+  padding: 0; /* Ensure no extra padding */
+}
 
-  .nav-list {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around; 
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-list li {
-    display: inline;
-  }
-  
-  .nav-list a {
-    text-decoration: none;
-    color: rgba(99, 43, 108, 1);
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-  }
-  
-  .nav-list a:hover {
-    color: #007bff;
-  }
-  
+.navbar-logo {
+  height: 80px; /* Adjust size as needed */
+  width: auto;
+}
+
+.nav-link {
+  color: rgba(99, 43, 108, 1); /* Purple color */
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1.1rem; /* Adjust font size */
+}
+
+.nav-link:hover {
+  color: #ff69b4; /* Pink color for hover */
+}
+
+.nav-link.active {
+  color: #ff69b4 !important; /* Pink color for active state */
+}
+
+.navbar-toggler-icon {
+  color: rgba(99, 43, 108, 1); /* Icon color */
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end; /* Pushes nav items to the right */
+  align-items: center;
+}
