@@ -1,83 +1,115 @@
 .login-container {
-    padding: 20px;
-    border-radius: 5px;
-    width: 700px; 
-    margin: auto; 
-    margin-top: 100px; 
-    text-align: center; 
-  }
-  
-  .login-container h5,
-  .login-container label,
-  .login-container button,
-  .login-container p {
-    color: rgba(99, 43, 108, 1); 
-  }
-
-  .login-container label {
-    color: black; 
-  }
-
-  .login-logo {
-    padding-top: 50px;
-    width: 500px; 
-    height: auto; 
-    margin-bottom: 20px; 
-  }
-  
-  .login-container a {
-    color: rgba(99, 43, 108, 1); 
-    text-decoration: none; 
-  }
-  
-  .login-container a:hover {
-    text-decoration: underline; 
-  }
-
-  .input-group {
-    margin-bottom: 20px; 
-    text-align: left; 
-  }
-  
-  .input-group label {
-    display: block; 
-    margin-bottom: 5px; 
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  .input-group input {
-    width: 100%; 
-    padding: 8px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-  }
-  
-  button {
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .new-user-container {
-    display: flex; 
-    justify-content: center;
-    align-items: center; 
-    margin-top: 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Start at the top of the container */
+  padding: 20px;
+  border-radius: 5px;
+  width: 700px;
+  margin: auto;
+  margin-top: 20px; /* Move the entire container higher */
+  text-align: center;
+  min-height: 100vh; /* Ensures the container covers the full height of the viewport */
 }
-.new-user-text {
-  margin-right: 10px; /* Space between text and button */
+
+.login-logo {
+  margin-top: 10px; /* Reduced margin to move the logo higher */
+  width: 400px; /* Adjusted width */
+  height: auto;
+  margin-bottom: 10px;
 }
+
+.login-container h5,
+.login-container label,
+.login-container p {
+  color: rgba(99, 43, 108, 1); /* Keep original color */
+}
+
+.login-container label {
+  color: black; /* Keep original label color */
+}
+
+.login-container a {
+  color: rgba(99, 43, 108, 1); /* Keep original link color */
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+.input-group {
+  margin-bottom: 15px; /* Reduce space to move content higher */
+  text-align: left;
+  width: 100%; /* Ensures inputs are full width */
+  max-width: 500px; /* Limit width for better layout */
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styling for the Login button */
+.login-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /* Rounded design */
+  color: white; /* Consistent button text color */
+  background-color: rgba(99, 43, 108, 1); /* Match original design */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px; /* Spacing above the button */
+}
+
+.login-button:hover {
+  background-color: #7a2b85; /* Consistent hover color */
+}
+
+/* New styling for the Create Account button */
 .create-account-button {
-    padding: 10px 20px;
-    border: none; 
-    border-radius: 5px; 
-    color: white; 
-    cursor: pointer; 
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(199, 108, 152, 1); /* New background color */
+  border: none;
+  border-radius: 5px; /* Rounded design */
+  color: white; /* Consistent button text color */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-  
-  
+.create-account-button:hover {
+  background-color: rgba(251, 195, 162, 0.7); /* New hover color */
+}
+
+.new-user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column; /* Stack text and button */
+  background-color: #f5f5f5; /* Light background for contrast */
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%; /* Match container width */
+  max-width: 500px; /* Limit width */
+}
+
+.new-user-text {
+  margin-bottom: 10px; /* Space between text and button */
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(99, 43, 108, 1); /* Match original color */
+}
