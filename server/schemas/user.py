@@ -29,3 +29,38 @@ class UserUpdate(BaseModel):
     phone: str = None
     class Config:
         orm_mode = True
+        
+class CustomActivityBase(BaseModel):
+    name: str
+    desc: Optional[str] = None
+    
+class CustomActivity(CustomActivityBase):
+    id: int
+    class Config:
+        orm_mode = True
+        
+class RewardBase(BaseModel):
+    mood: Optional[int] = None
+    activity: Optional[int] = None
+    journal: Optional[int] = None
+    strike: Optional[int] = None
+    
+class Reward(RewardBase):
+    id: int
+    class Config:
+        orm_mode = True
+
+class UpdateCustomActivity(CustomActivityBase):
+    name: Optional[str] = None
+    desc: Optional[str] = None
+    class Config:
+        orm_mode = True
+        
+class UpdateReward(RewardBase):
+    mood: Optional[int] = None
+    activity: Optional[int] = None
+    journal: Optional[int] = None
+    strike: Optional[int] = None
+    class Config:
+        orm_mode = True
+
