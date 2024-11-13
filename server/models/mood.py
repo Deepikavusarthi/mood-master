@@ -7,7 +7,7 @@ class Mood(Base):
     __tablename__ = 'moods'
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
+    user_id = Column(Integer, ForeignKey('users.id',ondelete='CASCADE'))
     ai_insights = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow) # Automatically update on change
@@ -21,7 +21,7 @@ class Journal(Base):
     __tablename__ = 'journals'
 
     id = Column(Integer, primary_key=True, index=True)
-    mood_id = Column(Integer, ForeignKey('moods.id'))
+    mood_id = Column(Integer, ForeignKey('moods.id',ondelete='CASCADE'))
     text = Column(Text)
     tags = Column(String(255), nullable=True)
 
@@ -31,11 +31,12 @@ class Activity(Base):
     __tablename__ = 'activities'
 
     id = Column(Integer, primary_key=True, index=True)
-    mood_id = Column(Integer, ForeignKey('moods.id'))
+    mood_id = Column(Integer, ForeignKey('moods.id',ondelete='CASCADE'))
     name = Column(String(100))
     duration = Column(Integer)  # Duration in minutes
     type = Column(String(50))
     quantity = Column(Float, nullable=True)
     gain = Column(Float, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+    
     mood = relationship("Mood", back_populates="activities")

@@ -36,7 +36,7 @@ class Journal(JournalBase):
     mood_id: int
 
     class Config:
-        orm_mode = True
+        orm_mode = True    
 
 class Activity(ActivityBase):
     id: int
