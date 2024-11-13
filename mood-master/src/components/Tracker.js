@@ -66,7 +66,7 @@ const TrackerPage = () => {
         </div>
         {/* Placeholder for future AI content */}
         <div className="insight-content">
-          {/* Empty for now */}
+          {aiInsight || "Select a mood to see insights"}
         </div>
       </div>
     </div>
