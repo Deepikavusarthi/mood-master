@@ -1,18 +1,76 @@
 import React from "react";
-
+import "./Profile.css";
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
-  //placeholder data
-  const userInfo = {
-    username: "user123",
-    password: "password123",
-  };
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <h2>Profile</h2>
-      <p>Username: {userInfo.username}</p>
-      <p>Password: {userInfo.password}</p>
+    <div className="settings-page">
+      <div className="settings-content">
+        <div className="settings-left">
+          <h3 className="section-header">Account</h3>
+          <div className="settings-list">
+            <div className="list-item hoverable" onClick={() => navigate("/edit-profile")}>
+              Edit Profile &gt;
+            </div>
+            <div className="list-item hoverable" onClick={() => navigate("/change-password")}>
+              Change Password &gt;
+            </div>
+            <div className="list-item hoverable" onClick={() => navigate("/change-email")}>
+              Change Email &gt;
+            </div>
+          </div>
+
+          <h3 className="section-header">Notification</h3>
+          <div className="notification-settings">
+            <div className="list-item">
+              <span>Daily</span>
+              <input type="checkbox" defaultChecked />
+            </div>
+            <div className="list-item">
+              <span>Weekly Ins</span>
+              <input type="checkbox" defaultChecked />
+            </div>
+            <div className="list-item">
+              <span>Community Update</span>
+              <input type="checkbox" defaultChecked />
+            </div>
+          </div>
+
+          <h3 className="section-header">Privacy and Security</h3>
+          <div className="privacy-settings">
+            <div className="list-item">
+              <span>Data Sharing</span>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button className="logout-button">Logout</button>
+        </div>
+
+        <div className="settings-right">
+          <h3 className="achievements-header">Achievements</h3>
+          <div className="achievements-list">
+            <div className="achievement-item">
+              <h4>7-Day Streak</h4>
+              <p>Logged your mood for 7 days straight</p>
+            </div>
+            <div className="achievement-item">
+              <h4>Mindfulness Master</h4>
+              <p>Completed 10 meditation sessions</p>
+            </div>
+            <div className="achievement-item">
+              <h4>Insight Seeker</h4>
+              <p>Reviewed your monthly insights 5 times</p>
+            </div>
+            <div className="achievement-item">
+              <h4>Community Supporter</h4>
+              <p>Participated in 3 community discussions</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
