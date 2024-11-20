@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .settings-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  .settings-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .settings-left {
+    width: 100%;
+    max-width: 60%;
+    padding: 20px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  
+  .settings-right {
+    width: 100%;
+    max-width: 40%;
+    padding: 20px;
+    background-color: #faf3f3;
+    box-sizing: border-box;
+  }
+  
+  .section-header {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  .settings-list,
+  .notification-settings,
+  .privacy-settings {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    margin-bottom: 30px; /* Space below each section */
+  }
+  
+  .list-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Left alignment */
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px; /* Space between list items */
+  }
+  
+  .list-item span {
+    flex-grow: 1; /* Ensure text is aligned properly with the checkbox */
+  }
+  
+  .hoverable {
+    cursor: pointer;
+    padding-left: 0; /* Ensure left alignment matches everything else */
+    text-align: left;
+  }
+  
+  .hoverable:hover {
+    color: #d97a9e; /* Pink hover effect */
+  }
+  
+  .logout-button {
+    display: block;
+    width: 100%;
+    background-color: #a34d5d;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+  
+  .logout-button:hover {
+    background-color: #922e3f;
+  }
+  
+  .achievements-header {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 15px;
+  }
+  
+  .achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .achievement-item {
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .achievement-item h4 {
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+  }
+  
+  .achievement-item p {
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  /* Media Query for Responsiveness */
+  @media (max-width: 768px) {
+    .settings-left,
+    .settings-right {
+      max-width: 100%;
+      border-right: none;
+    }
+
+.time-selector {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  width: 110px;
+  background-color: #f9f9f9; /* Light gray background */
+  color: #333; /* Text color */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.time-selector:focus {
+  border-color: #a34d5d; /* Match the pinkish theme on focus */
+  box-shadow: 0 0 5px rgba(163, 77, 93, 0.5); /* Subtle glow effect */
+}
+
+  }
+  
