@@ -9,6 +9,9 @@ import Calendar from "./components/Calendar";
 import Profile from "./components/Profile";
 import CreateAccount from './components/CreateAccount'; 
 import Navbar from "./components/Navbar";
+import Sleep from './components/Sleep';
+import Exercise from './components/Exercise';
+import Nutrition from './components/Nutrition';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-account" element={<CreateAccount />} />
+          <Route path="/sleep" element={<Sleep />} />
+          <Route path="/exercise" element={<Exercise />} />
+          <Route path="/nutrition" element={<Nutrition />} />
         </Routes>
       </header>
     </div>

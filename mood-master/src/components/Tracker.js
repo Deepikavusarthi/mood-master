@@ -50,10 +50,10 @@ const TrackerPage = () => {
       </div>
       
       <div className="activity-buttons">
-        <button className="activity-btn" onClick={() => handleNavigate("/sleep")}>Sleep</button>
         <button className="activity-btn" onClick={() => handleNavigate("/exercise")}>Exercise</button>
         <button className="activity-btn" onClick={() => handleNavigate("/nutrition")}>Nutrition</button>
-        <button className="activity-btn" onClick={() => handleNavigate("/self-care")}>Self-Care</button>
+        <button className="activity-btn" onClick={() => handleNavigate("/sleep")}>Sleep</button>
+        {/* <button className="activity-btn" onClick={() => handleNavigate("/self-care")}>Self-Care</button> */}
       </div>
 
       <button className="journal-btn" onClick={handleJournalClick}>Daily Journal</button>
@@ -66,7 +66,7 @@ const TrackerPage = () => {
         </div>
         {/* Placeholder for future AI content */}
         <div className="insight-content">
-          {aiInsight || "Select a mood to see insights"}
+          {/* Empty for now */}
         </div>
       </div>
     </div>

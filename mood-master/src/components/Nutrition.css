@@ -1,0 +1,103 @@
+.page-container {
+    margin-top: 50px;
+    padding: 20px;
+    color: rgba(99, 43, 108, 1);
+    max-width: 900px;  
+    width: 100%;  
+    margin-left: auto;  
+    margin-right: auto;  
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea, input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgba(99, 43, 108, 1);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(99, 43, 108, 1);
+}
+
+.meal-entry {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.recorded-meals {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+.recorded-meals button {
+    background-color: rgba(99, 43, 108, 1);
+    color: white;
+    margin-right: 15px;
+}
+
+.hydration-tracker {
+    margin-top: 30px;
+    display: block;
+    align-items: center;
+}
+
+.hydration-tracker button {
+    background-color: rgba(99, 43, 108, 1);
+    margin: 0 10px;
+}
+
+.hydration-tracker span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.meal-record {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.meal-record button {
+    background-color: rgba(99, 43, 108, 1);
+    margin-right: 10px;
+}
+
+.meal-time-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
