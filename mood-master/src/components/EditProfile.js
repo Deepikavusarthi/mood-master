@@ -6,33 +6,36 @@ const EditProfile = () => {
   const [email, setEmail] = useState("user@example.com");
 
   const handleSave = () => {
-    // Logic to save updated username/email
     alert("Profile updated successfully!");
   };
 
   return (
     <div className="settings-page">
-      <h2>Edit Profile</h2>
-      <div className="settings-form">
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <button className="save-button" onClick={handleSave}>
-          Save Changes
-        </button>
+      <div className="settings-box">
+        <h2 className="settings-title">Edit Profile</h2>
+        <div className="settings-form">
+          <label className="settings-label">
+            Username:
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="settings-input"
+            />
+          </label>
+          <label className="settings-label">
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="settings-input"
+            />
+          </label>
+          <button className="save-button" onClick={handleSave}>
+            Save Changes
+          </button>
+        </div>
       </div>
     </div>
   );

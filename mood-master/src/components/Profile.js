@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
+
+  // State to hold selected times for notifications
+  const [dailyTime, setDailyTime] = useState("09:00");
+  const [weeklyTime, setWeeklyTime] = useState("10:00");
+  const [communityTime, setCommunityTime] = useState("11:00");
 
   return (
     <div className="settings-page">
@@ -26,15 +31,45 @@ const ProfilePage = () => {
           <div className="notification-settings">
             <div className="list-item">
               <span>Daily</span>
-              <input type="checkbox" defaultChecked />
+              <input
+                type="checkbox"
+                defaultChecked
+                style={{ marginLeft: "10px", marginRight: "10px" }}
+              />
+              <input
+                type="time"
+                value={dailyTime}
+                onChange={(e) => setDailyTime(e.target.value)}
+                className="time-selector"
+              />
             </div>
             <div className="list-item">
               <span>Weekly Ins</span>
-              <input type="checkbox" defaultChecked />
+              <input
+                type="checkbox"
+                defaultChecked
+                style={{ marginLeft: "10px", marginRight: "10px" }}
+              />
+              <input
+                type="time"
+                value={weeklyTime}
+                onChange={(e) => setWeeklyTime(e.target.value)}
+                className="time-selector"
+              />
             </div>
             <div className="list-item">
               <span>Community Update</span>
-              <input type="checkbox" defaultChecked />
+              <input
+                type="checkbox"
+                defaultChecked
+                style={{ marginLeft: "10px", marginRight: "10px" }}
+              />
+              <input
+                type="time"
+                value={communityTime}
+                onChange={(e) => setCommunityTime(e.target.value)}
+                className="time-selector"
+              />
             </div>
           </div>
 
@@ -42,7 +77,7 @@ const ProfilePage = () => {
           <div className="privacy-settings">
             <div className="list-item">
               <span>Data Sharing</span>
-              <input type="checkbox" />
+              <input type="checkbox" style={{ marginLeft: "10px" }} />
             </div>
           </div>
 

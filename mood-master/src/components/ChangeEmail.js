@@ -5,25 +5,27 @@ const ChangeEmail = () => {
   const [newEmail, setNewEmail] = useState("");
 
   const handleSave = () => {
-    // Logic to save updated email
     alert("Email updated successfully!");
   };
 
   return (
     <div className="settings-page">
-      <h2>Change Email</h2>
-      <div className="settings-form">
-        <label>
-          New Email:
-          <input
-            type="email"
-            value={newEmail}
-            onChange={(e) => setNewEmail(e.target.value)}
-          />
-        </label>
-        <button className="save-button" onClick={handleSave}>
-          Save Changes
-        </button>
+      <div className="settings-box">
+        <h2 className="settings-title">Change Email</h2>
+        <div className="settings-form">
+          <label className="settings-label">
+            New Email:
+            <input
+              type="email"
+              value={newEmail}
+              onChange={(e) => setNewEmail(e.target.value)}
+              className="settings-input"
+            />
+          </label>
+          <button className="save-button" onClick={handleSave}>
+            Save Changes
+          </button>
+        </div>
       </div>
     </div>
   );
