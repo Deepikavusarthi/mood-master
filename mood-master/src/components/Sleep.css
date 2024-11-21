@@ -1,41 +1,70 @@
 .page-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .input-section {
-    margin-bottom: 20px;
-  }
-  
-  .input-section label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input, select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: rgba(99, 43, 108, 1);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .hydration-tracker {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
+  margin-top: 50px;
+  padding: 20px;
+  color: rgba(99, 43, 108, 1);
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;  
+  gap: 10px; 
+}
+
+.input-section {
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.input-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: rgba(99, 43, 108, 1);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(99, 43, 108, 1);
+}
+
+.input-section button {
+  margin-top: 15px;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 12px;
+  padding: 2px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: rgba(99, 43, 108, 1);
+}
+
+.back-button:hover {
+  color: rgba(199, 108, 152, 1);
+}
