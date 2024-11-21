@@ -1,0 +1,27 @@
+.page-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .input-section {
+    margin-bottom: 20px;
+  }
+
+  .input-section label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .hydration-tracker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }

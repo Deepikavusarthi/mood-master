@@ -1,0 +1,282 @@
+/* Main container styles */
+.tracker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.tracker-container h1 {
+  color: #632b6c;
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: larger;
+}
+
+/* Mood buttons section */
+.mood-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mood-button-wrapper {
+  position: relative;
+}
+
+.mood-button {
+  padding: 16px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mood-button:hover {
+  transform: scale(1.1);
+}
+
+/* Color styles for each mood */
+.mood-button[data-mood="Angry"] {
+  color: #ff4d4d;
+}
+
+.mood-button[data-mood="Frown"] {
+  color: #ff9933;
+}
+
+.mood-button[data-mood="Meh"] {
+  color: #ffeb3b;
+}
+
+.mood-button[data-mood="Smile"] {
+  color: #4caf50;
+}
+
+.mood-button[data-mood="Laugh"] {
+  color: #2e7d32;
+}
+
+/* Mood label tooltip */
+.mood-label {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: none;
+  z-index: 10;
+}
+
+.mood-button-wrapper:hover .mood-label {
+  display: block;
+}
+
+/* Mood bar styles */
+.mood-bar {
+  width: 100%;
+  height: 8px;
+  position: relative;
+  padding-left: -10px;
+  margin-bottom: 32px;
+}
+
+.mood-gradient {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    #ff4d4d 0%,
+    #ff9933 25%,
+    #ffeb3b 50%,
+    #4caf50 75%,
+    #2e7d32 100%
+  );
+}
+
+#arrow {
+  position: absolute;
+  left:30px;
+  top: -16px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #333;
+  transition: left 0.3s ease;
+}
+
+/* Activity buttons section */
+.activity-buttons {
+  display: flex;
+  gap:30px;
+  /* width: 100%; */
+  margin-bottom: 24px;
+}
+
+.activity-btn {
+  padding: 8px 20px;
+  border: 2px solid #632b6c;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #632b6c;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activity-btn:hover {
+  background-color: rgba(99, 43, 108, 0.1);
+}
+
+/* Journal button */
+.journal-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #632b6c;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 32px;
+  transition: background-color 0.3s ease;
+}
+
+.journal-btn:hover {
+  background-color: #7a2b85;
+}
+
+/* AI Insight section */
+.insight-box {
+  /* width: 80%; */
+  /* max-width: 600px; */
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.insight-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.hollow-heart-icon {
+  color: #632b6c;
+  font-size: 20px;
+}
+
+.insight-header h3 {
+  color: #632b6c;
+  font-size: 16px;
+  margin: 0;
+}
+
+.insight-content {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  min-height: 50px;
+  color:black !important;
+}
+
+/* Previous styles remain the same until mood-bar... */
+
+/* Mood bar and arrow styles */
+.mood-bar {
+  width: 85%;
+  height: 8px;
+  position: relative;
+  margin-bottom: 32px;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.mood-gradient {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    #ff4d4d 0%,
+    #ff9933 25%,
+    #ffeb3b 50%,
+    #4caf50 75%,
+    #2e7d32 100%
+  );
+}
+
+.arrow-container {
+  position: absolute;
+  top: -35px; /* Increased to accommodate larger arrow */
+  transform: translateX(-50%);
+  transition: left 0.3s ease;
+}
+
+.mood-arrow {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 2px solid #632b6c;
+  transform: rotate(45deg);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mood-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #632b6c;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  transform: rotate(45deg);
+}
+
+.mood-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 14px;
+  color: #632b6c;
+  font-weight: bold;
+}
+
+/* Add animation for arrow movement */
+@keyframes arrowBounce {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.arrow-container.active {
+  animation: arrowBounce 0.5s ease;
+}
+.insight-subtext {
+  font-size: 12px;
+  color:gray;
+}
+.clear-btn {
+  font-size: 12px;
+  color:gray !important;
+  cursor: pointer;
+  float: right;
+}
+/* Rest of the previous CSS styles remain the same */

@@ -1,0 +1,97 @@
+.login-container {
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%; 
+  max-width: 700px; 
+  margin: auto; 
+  text-align: center; 
+}
+
+.login-container h5,
+.login-container label,
+.login-container button,
+.login-container p {
+  color: rgba(99, 43, 108, 1); 
+}
+
+.login-container label {
+  color: black; 
+}
+
+.login-logo {
+  padding-top: 10px;
+  width: 80%; 
+  max-width: 500px; 
+  height: auto; 
+  margin-bottom: -20px;
+  /* margin-bottom: 20px;  */
+}
+
+.login-container a {
+  color: rgba(99, 43, 108, 1); 
+  text-decoration: none; 
+}
+
+.login-container a:hover {
+  text-decoration: underline; 
+  color: rgba(150, 75, 150, 1); 
+}
+
+.input-group {
+  margin-bottom: 20px; 
+  text-align: left; 
+}
+
+.input-group label {
+  display: block; 
+  margin-bottom: 5px; 
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%; 
+  padding: 8px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+}
+
+.login-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /* Rounded design */
+  color: white !important; /* Consistent button text color */
+  background-color: rgba(99, 43, 108, 1); /* Match original design */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px; /* Spacing above the button */
+}
+
+.login-button:hover {
+  background-color: #7a2b85; /* Consistent hover color */
+}
+
+.new-user-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  margin-top: 20px; 
+  gap: 10px;
+}
+.new-user-text {
+margin-right: 10px; /* Space between text and button */
+}
+.create-account-button {
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px; 
+  color: white; 
+  cursor: pointer;
+  /* background-color: rgba(99, 43, 108, 1); */
+}
+.create-account-button:hover {
+  text-decoration: underline;
+  /* background-color: rgba(150, 75, 150, 1); */
+}
