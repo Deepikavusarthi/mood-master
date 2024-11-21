@@ -13,7 +13,6 @@ const [hoursSlept, setHoursSlept] = useState("");
     <div className="page-container">
       <h1>Sleep Tracker</h1>
       <div className="input-section">
-        <p>How many hours did you sleep last night?</p>
         <label>Hours Slept:</label>
         <input
           type="number"
@@ -21,8 +20,6 @@ const [hoursSlept, setHoursSlept] = useState("");
           onChange={(e) => setHoursSlept(e.target.value)}
           placeholder="Enter hours"
         />
-      </div>
-      <div className="input-section">
         <p>How well did you sleep?</p>
         <select value={sleepQuality} onChange={handleQualityChange}>
           <option value="">Select Quality</option>
