@@ -10,6 +10,11 @@ const ProfilePage = () => {
   const [weeklyTime, setWeeklyTime] = useState("10:00");
   const [communityTime, setCommunityTime] = useState("11:00");
 
+  const handleLogout = () => {
+    // Perform any logout logic here (e.g., clearing user session)
+    navigate("/"); // Redirect to home page
+  };
+
   return (
     <div className="settings-page">
       <div className="settings-content">
@@ -81,7 +86,9 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          <button className="logout-button">Logout</button>
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
 
         <div className="settings-right">
