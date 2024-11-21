@@ -7,6 +7,9 @@ import Calendar from "./components/Calendar";
 import Profile from "./components/Profile";
 import CreateAccount from "./components/CreateAccount";
 import Navbar from "./components/Navbar";
+import Sleep from "./components/Sleep";
+import Exercise from "./components/Exercise";
+import Nutrition from "./components/Nutrition";
 import EditProfile from "./components/EditProfile";
 import ChangePassword from "./components/ChangePassword";
 import ChangeEmail from "./components/ChangeEmail";
@@ -27,6 +30,9 @@ function App() {
             <Route path="/edit-profile" element={<EditProfile />} />
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/change-email" element={<ChangeEmail />} />
+            <Route path="/sleep" element={<Sleep />} />
+            <Route path="/exercise" element={<Exercise />} />
+            <Route path="/nutrition" element={<Nutrition />} />
           </Routes>
         </header>
       </div>
