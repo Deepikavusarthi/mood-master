@@ -17,22 +17,6 @@ import ChangeEmail from "./components/ChangeEmail";
 function App() {
   return (
     <Router>
-    <div className="App">
-      <header className="App-header">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/tracker" element={<Tracker />} />
-          <Route path="/journal" element={<Journal />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/sleep" element={<Sleep />} />
-          <Route path="/exercise" element={<Exercise />} />
-          <Route path="/nutrition" element={<Nutrition />} />
-        </Routes>
-      </header>
-    </div>
       <div className="App">
         <header className="App-header">
           <Navbar />
@@ -46,6 +30,9 @@ function App() {
             <Route path="/edit-profile" element={<EditProfile />} />
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/change-email" element={<ChangeEmail />} />
+            <Route path="/sleep" element={<Sleep />} />
+            <Route path="/exercise" element={<Exercise />} />
+            <Route path="/nutrition" element={<Nutrition />} />
           </Routes>
         </header>
       </div>
