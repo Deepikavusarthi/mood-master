@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
-from server.models import user as models
+from server.models import user as models, setting
 from server.schemas import user as schemas
 from server import utils
 from server.database import get_db
@@ -14,7 +14,7 @@ router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
-@router.post("/users/", response_model=schemas.User)
+@router.post("/users/", response_model=schemas.UserResponse)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     try:
         db_user = models.User(
@@ -22,13 +22,13 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
             lname=user.lname,
             email=user.email,
             password=utils.get_password_hash(user.password),  # Hash the password
-            phone=user.phone,
+            phone=user.phone if user.phone else None,
             username=user.username
         )
         db.add(db_user)
         db.commit()
         db.refresh(db_user)
-        db_setting = models.Setting(
+        db_setting = setting.Setting(
             user_id=db_user.id,
             anonymous=False,
             strike=0
@@ -36,7 +36,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         db.add(db_setting)
         db.commit()
         db.refresh(db_setting)
-        db_notification = models.Notification(
+        db_notification = setting   .Notification(
             setting_id=db_setting.id,
             type="Daily",
             flag=True,
@@ -56,7 +56,8 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         db.add(db_reward)
         db.commit()
         db.refresh(db_reward)
-        return db_user
+        access_token, refresh_token = utils.create_access_token(data={"sub": db_user.username})
+        return {"access_token": access_token, "refresh_token": refresh_token, "token_type": "bearer", "user": db_user}
     except IntegrityError as e:
         db.rollback()
         raise HTTPException(status_code=400, detail="User already exists")
@@ -64,7 +65,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         db.rollback()
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
-@router.post("/login/")
+@router.post("/login/", response_model=schemas.UserResponse)
 def login(user: schemas.UserLogin, db: Session = Depends(get_db)):
     try:
         # Check if the user exists by username or email
@@ -81,8 +82,8 @@ def login(user: schemas.UserLogin, db: Session = Depends(get_db)):
                 headers={"WWW-Authenticate": "Bearer"},
             )
         
-        access_token = utils.create_access_token(data={"sub": db_user.username})
-        return {"access_token": access_token, "token_type": "bearer"}
+        access_token, refresh_token = utils.create_access_token(data={"sub": db_user.username})
+        return {"access_token": access_token, "refresh_token": refresh_token, "token_type": "bearer", "user": db_user}
     except HTTPException as e:
         raise e
     except Exception as e:
@@ -116,18 +117,20 @@ def update_user(user_update: schemas.UserUpdate, db: Session = Depends(get_db), 
 
         db.commit()
         db.refresh(db_user)
+        
         return db_user
     except HTTPException as e:
         raise e
     except Exception as e:
         db.rollback()
         raise HTTPException(status_code=500, detail="Internal Server Error")
+    
 
 @router.post("/token/refresh/")
 def refresh_token(current_user: schemas.User = Depends(get_current_user)):
     try:
-        access_token = utils.create_access_token(data={"sub": current_user.username})
-        return {"access_token": access_token, "token_type": "bearer"}
+        access_token, refresh_token = utils.create_access_token(data={"sub": current_user.username})
+        return {"access_token": access_token, "refresh_token": refresh_token, "token_type": "bearer"}
     except Exception as e:
         raise HTTPException(status_code=500, detail="Internal Server Error")
 

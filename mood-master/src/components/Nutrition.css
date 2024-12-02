@@ -26,7 +26,7 @@ textarea, input, select {
     border-radius: 5px;
 }
 
-button {
+.meal-entry button {
     background-color: rgba(99, 43, 108, 1);
     color: white;
     padding: 10px;
@@ -35,7 +35,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.meal-entry button:hover {
     background-color: rgba(99, 43, 108, 1);
 }
 
@@ -100,4 +100,3 @@ button:hover {
     border-radius: 5px;
     font-size: 14px;
 }
-

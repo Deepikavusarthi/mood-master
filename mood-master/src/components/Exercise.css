@@ -7,16 +7,16 @@
     margin-left: auto;  
     margin-right: auto; 
   }
-  
+
   .input-section, .journal-entry {
     margin-bottom: 20px;
   }
-  
+
   .input-section label, .journal-entry label {
     display: block;
     margin-bottom: 5px;
   }
-  
+
   textarea, input, select {
     width: 100%;
     padding: 8px;
@@ -25,47 +25,24 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
-  button {
-    background-color: rgba(99, 43, 108, 1);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: rgba(99, 43, 108, 1);
-  }
-  
+
+
   .exercise-entry {
-    display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
     background-color: #f9f9f9;
-  }
-
-  .exercise-entry label, select, input{
-    margin-bottom: 15px;
-  }
-
-  .exercise-entry button{
-    margin-top: 15px;
   }
 
   .exercise-list {
-    display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
     background-color: #f9f9f9;
-    margin-top: 20px;
   }
 
   .exercise-list button {
@@ -78,10 +55,7 @@
     background-color: rgba(99, 43, 108, 1);
     color: white;
   }
-  
+
   .exercise-entry button:hover, .exercise-list button:hover, .input-section button:hover, .journal-entry button:hover {
     background-color: rgba(99, 43, 108, 1);
   }
-  
-
-  

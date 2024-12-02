@@ -10,9 +10,10 @@ class JournalBase(BaseModel):
 
 class ActivityBase(BaseModel):
     name: str
-    duration: int  # Duration in minutes
+    duration: Optional[int] = 0 # Duration in minutes
     type: str
     quantity: Optional[float] = None
+    quality: Optional[str] = None
     gain: Optional[float] = None
 
 class MoodBase(BaseModel):
@@ -20,7 +21,7 @@ class MoodBase(BaseModel):
     ai_insights: Optional[str] = None
 
 class MoodCreate(MoodBase):
-    journals: List[JournalBase] = []
+    journal: List[JournalBase] = []
     activities: List[ActivityBase] = []
 
 class Mood(MoodBase):

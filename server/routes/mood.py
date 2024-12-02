@@ -12,6 +12,7 @@ from jose import JWTError, jwt
 from server import utils
 from datetime import datetime
 from sqlalchemy import func
+from server.routes.ai import generate_ai_insights
 # current_user = get_current_user()
 from server.routes.auth import get_current_user
 router = APIRouter()
@@ -31,8 +32,8 @@ def create_mood(mood: MoodCreate, current_user: User = Depends(get_current_user)
         
         # Add journals and activities if provided
         store_journals = []
-        if mood.journals:
-            for journal in mood.journals:
+        if mood.journal:
+            for journal in mood.journal:
                 store_journals.append(JournalModel(**journal.dict(), mood_id=db_mood.id))
             db.add_all(store_journals)
             db.commit()
@@ -49,6 +50,12 @@ def create_mood(mood: MoodCreate, current_user: User = Depends(get_current_user)
             "journal":0,
             "activity":0
         }
+        db.refresh(db_mood)
+        ai_insights = generate_ai_insights(db_mood.id,current_user,db)
+        db_mood.ai_insights = ai_insights
+        db.commit()
+        db.refresh(db_mood)
+        print(db_mood)
         if db_mood:
             reward["mood"] = 1
         if store_journals:
@@ -64,15 +71,8 @@ def create_mood(mood: MoodCreate, current_user: User = Depends(get_current_user)
             db.refresh(db_reward)
         db.refresh(db_mood)
         response = {
-            "id": db_mood.id,
-            "created_at": db_mood.created_at,
-            "updated_at": db_mood.updated_at,
-            "user_id": db_mood.user_id,
-            "ai_insights": db_mood.ai_insights,
-            "mood_type": db_mood.mood_type,
-            "journals": db_mood.journals,
-            "activities": db_mood.activities,
-            "reward": db_reward
+            "message":"Mood created successfully",
+            "ai_insights":db_mood.ai_insights
         }
         return response
     except Exception as e:
@@ -115,11 +115,12 @@ from datetime import datetime
 def read_mood_by_date(date: str, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     try:
         date_time_obj = datetime.strptime(date, '%Y-%m-%d')
-        moods = db.query(MoodModel).filter(MoodModel.user_id == current_user.id, func.date(MoodModel.created_at) == date_time_obj.date()).all()
-        for mood in moods:
+        mood = db.query(MoodModel).filter(MoodModel.user_id == current_user.id, func.date(MoodModel.created_at) == date_time_obj.date()).order_by(MoodModel.created_at.desc()).first()
+        if mood:
             mood.journals = db.query(JournalModel).filter(JournalModel.mood_id == mood.id).all()
             mood.activities = db.query(ActivityModel).filter(ActivityModel.mood_id == mood.id).all()
-        return moods
+        
+        return mood
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

@@ -8,6 +8,8 @@ class UserBase(BaseModel):
     email: str
     phone: str
     username: str
+    phone: Optional[str] = None
+    
 
 class UserCreate(UserBase):
     password: str
@@ -61,6 +63,13 @@ class UpdateReward(RewardBase):
     activity: Optional[int] = None
     journal: Optional[int] = None
     strike: Optional[int] = None
+    class Config:
+        orm_mode = True
+
+class UserResponse(BaseModel):
+    access_token: str
+    refresh_token: str
+    user: User
     class Config:
         orm_mode = True
 

@@ -19,7 +19,6 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" exact to="/" activeClassName="active">Home</NavLink>
             </li>
             <li className="nav-item">
               <NavLink
@@ -29,9 +28,9 @@ const Navbar = () => {
                     ? 'active'
                     : ''
                 }`}
-                to="/tracker"
+                to="/"
               >
-                Tracker
+                Home
               </NavLink>
             </li>
             <li className="nav-item">
@@ -41,7 +40,7 @@ const Navbar = () => {
               <NavLink className="nav-link" to="/calendar" activeClassName="active">Mood Analysis</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/profile" activeClassName="active">Profile</NavLink>
+              <NavLink className="nav-link" to="/settings" activeClassName="active">Settings</NavLink>
             </li>
           </ul>
         </div>

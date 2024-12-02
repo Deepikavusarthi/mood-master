@@ -1,41 +1,42 @@
+import logo from './logo.svg';
+import './App.css';
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/Login";
 import Tracker from "./components/Tracker";
 import Journal from "./components/Journal";
 import Calendar from "./components/Calendar";
+import SettingsView from "./components/Settings";
 import Profile from "./components/Profile";
-import CreateAccount from "./components/CreateAccount";
+import CreateAccount from './components/CreateAccount'; 
 import Navbar from "./components/Navbar";
-import Sleep from "./components/Sleep";
-import Exercise from "./components/Exercise";
-import Nutrition from "./components/Nutrition";
-import EditProfile from "./components/EditProfile";
-import ChangePassword from "./components/ChangePassword";
-import ChangeEmail from "./components/ChangeEmail";
+import Sleep from './components/Sleep';
+import Exercise from './components/Exercise';
+import Nutrition from './components/Nutrition';
+import ProtectedRoute from './ProtectedRoute';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/tracker" element={<Tracker />} />
-            <Route path="/journal" element={<Journal />} />
-            <Route path="/calendar" element={<Calendar />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/create-account" element={<CreateAccount />} />
-            <Route path="/edit-profile" element={<EditProfile />} />
-            <Route path="/change-password" element={<ChangePassword />} />
-            <Route path="/change-email" element={<ChangeEmail />} />
-            <Route path="/sleep" element={<Sleep />} />
-            <Route path="/exercise" element={<Exercise />} />
-            <Route path="/nutrition" element={<Nutrition />} />
-          </Routes>
-        </header>
-      </div>
+    <div className="App">
+      <header className="App-header">
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/create-account" element={<CreateAccount />} />
+
+          <Route path="/" element={<ProtectedRoute><Tracker /></ProtectedRoute>} />
+          <Route path="/journal" element={<ProtectedRoute><Journal /></ProtectedRoute>} />
+          <Route path="/calendar" element={<ProtectedRoute><Calendar /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/settings" element={<ProtectedRoute><SettingsView /></ProtectedRoute>} />
+          <Route path="/sleep" element={<ProtectedRoute><Sleep /></ProtectedRoute>} />
+          <Route path="/exercise" element={<ProtectedRoute><Exercise /></ProtectedRoute>} />
+          <Route path="/nutrition" element={<ProtectedRoute><Nutrition /></ProtectedRoute>} />
+        </Routes>
+      </header>
+    </div>
     </Router>
   );
 }

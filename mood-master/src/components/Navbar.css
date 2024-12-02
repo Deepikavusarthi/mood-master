@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #ffffff; /* White background */
+  background-color: rgba(256,256,256,0.9); /* White background */
   padding: 1rem 2rem; /* Add padding to create space on both sides */
   border: none; /* Remove border */
   position: fixed;

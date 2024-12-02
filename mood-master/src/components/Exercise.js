@@ -1,35 +1,52 @@
 import React, { useState } from "react";
 import './Exercise.css';
+import { useCreateMoodStore } from "../store/useCreateMoodStore";
 
 const ExercisePage = () => {
-  const [exercises, setExercises] = useState([]);
+  const { createMood, setCreateMood } = useCreateMoodStore();
+  const [exercises, setExercises] = useState(createMood?.activities?.filter(activity => activity.name === "Exercise"));
   const [currentExercise, setCurrentExercise] = useState({
     type: "",
     intensity: "",
-    duration: "",
+    duration: 0,
   });
   const [stepsWalked, setStepsWalked] = useState("");
   const [journalEntry, setJournalEntry] = useState("");
 
   const handleAddExercise = () => {
     const exerciseType = currentExercise.type === "Other" ? currentExercise.customType : currentExercise.type;
+    const existingExercise = createMood?.activities?.find(activity => activity.type === exerciseType);
+    if (existingExercise) {
+      const newMood = { ...createMood, activities: createMood?.activities?.map(activity => activity.type === exerciseType ? { name: "Exercise", duration: currentExercise.duration, type: exerciseType, quality: currentExercise.intensity } : activity) };
+      setCreateMood(newMood);
+    } else {
+      const newMood = { ...createMood, activities: [...createMood?.activities, { name: "Exercise", duration: currentExercise.duration, type: exerciseType, quality: currentExercise.intensity }] };
+      setCreateMood(newMood);
+    }
 
     if (exerciseType && currentExercise.intensity && currentExercise.duration) {
-      setExercises([...exercises, { 
-        type: exerciseType, 
-        intensity: currentExercise.intensity, 
-        duration: currentExercise.duration 
+      setExercises([...exercises, {
+        type: exerciseType,
+        intensity: currentExercise.intensity,
+        duration: currentExercise.duration
       }]);
-      setCurrentExercise({ type: "", intensity: "", duration: "", customType: "" }); // Reset current exercise fields
+      setCurrentExercise({ type: "", intensity: "", duration: 0, customType: "" }); // Reset current exercise fields
     }
+    console.log(createMood);
   };
 
   const handleExerciseChange = (field, value) => {
-    setCurrentExercise({ ...currentExercise, [field]: value });
+    let parsedValue = value;
+    if (field === "duration") {
+      parsedValue = parseInt(value);
+    }
+    setCurrentExercise({ ...currentExercise, [field]: parsedValue });
   };
 
-  const handleDeleteExercise = (id) => {
-    setExercises(exercises.filter((exercise) => exercise.id !== id));
+  const handleDeleteExercise = (exercise) => {
+    const newMood = {...createMood, activities: createMood?.activities?.filter(activity => activity.type !== exercise.type && activity.name !== "Exercise")};
+    setCreateMood(newMood);
+    setExercises(exercises.filter((item) => item.type !== exercise.type));
   };
 
   const handleEditExercise = (id) => {
@@ -126,7 +143,7 @@ const ExercisePage = () => {
             <p><strong>Intensity:</strong> {exercise.intensity}</p>
             <p><strong>Duration:</strong> {exercise.duration} minutes</p>
             <button onClick={() => handleEditExercise(exercise.id)}>Edit</button>
-            <button onClick={() => handleDeleteExercise(exercise.id)}>Delete</button>
+            <button onClick={() => handleDeleteExercise(exercise)}>Delete</button>
           </div>
         ))}
       </div>

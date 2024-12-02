@@ -1,23 +1,40 @@
 import React, { useState } from "react";
 import './Nutrition.css';
-
+import { useCreateMoodStore } from "../store/useCreateMoodStore";
 const NutritionPage = () => {
+  const { createMood, setCreateMood, clearCreateMood } = useCreateMoodStore();
   const [mealType, setMealType] = useState("");
   const [customMealType, setCustomMealType] = useState("");
-  const [mealTime, setMealTime] = useState("");
+  const [mealTime, setMealTime] = useState(0);
   const [mealDescription, setMealDescription] = useState("");
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState(createMood?.activities?.filter(activity => activity.name === "Nutrition") || []);
   const [hydration, setHydration] = useState(0);
 
   const handleAddMeal = () => {
+    const existingMeal = createMood?.activities?.find(activity =>  activity.type == mealType);
+    if (existingMeal) {
+      // alert("Meal already recorded.");
+      const updatedMeals = createMood?.activities?.map(activity => activity.type === mealType ? {name:"Nutrition",type: mealType, quantity: parseInt(mealTime), quality: mealDescription, gain:hydration} : activity);
+      const newMood = {...createMood, activities: updatedMeals};
+      setCreateMood(newMood);
+      return;
+    }
+    else {
+      const newMeal = {type: mealType, quantity: parseInt(mealTime), quality: mealDescription, gain:hydration,name:"Nutrition"};
+      const newMood = {...createMood, activities: [...createMood?.activities, newMeal]};
+      setCreateMood(newMood);
+    }
+
     if (mealType === "Other" && !customMealType) {
       alert("Please enter a custom meal type.");
       return;
     }
     const newMeal = {
       type: mealType === "Other" ? customMealType : mealType,
-      time: mealTime,
-      description: mealDescription,
+      quantity: parseInt(mealTime),
+      quality: mealDescription,
+      gain:hydration,
+      name:"Nutrition"
     };
     setMeals([...meals, newMeal]);
     setMealType("");
@@ -29,15 +46,21 @@ const NutritionPage = () => {
   const handleEditMeal = (index) => {
     const mealToEdit = meals[index];
     setMealType(mealToEdit.type);
-    setMealTime(mealToEdit.time);
-    setMealDescription(mealToEdit.description);
+    setMealTime(mealToEdit.quantity);
+    setMealDescription(mealToEdit.quality);
     const updatedMeals = meals.filter((_, idx) => idx !== index);
     setMeals(updatedMeals);
+    const updatedMood = {...createMood, activities: createMood?.activities?.filter(activity => activity.name !== "Nutrition" || activity.type !== mealToEdit.type)};
+    setCreateMood(updatedMood);
+
   };
 
   const handleDeleteMeal = (index) => {
+    const type = meals[index].type;
     const updatedMeals = meals.filter((_, idx) => idx !== index);
     setMeals(updatedMeals);
+    const updatedMood = {...createMood, activities: createMood?.activities?.filter(activity => activity.name !== "Nutrition" || activity.type !== type)};
+    setCreateMood(updatedMood);
   };
 
   const handleHydrationChange = (change) => {
@@ -74,12 +97,13 @@ const NutritionPage = () => {
         </div>
 
         <div className="input-section">
-          <label>Meal Time:</label>
+          <label>Meal Quantity:</label>
           <input
-            type="time"
+            type="number"
             value={mealTime}
             onChange={(e) => setMealTime(e.target.value)}
             className="meal-time-input"
+            placeholder="Enter quantity in grams"
           />
         </div>
 
@@ -108,8 +132,8 @@ const NutritionPage = () => {
         <h2>Recorded Meals</h2>
         {meals.map((meal, index) => (
           <div key={index} className="meal-record">
-            <p><strong>{meal.type}</strong> at {meal.time}</p>
-            <p>{meal.description}</p>
+            <p><strong>{meal.type}</strong> :{meal.quantity}g</p>
+            <p>{meal.quality}</p>
             <button onClick={() => handleEditMeal(index)}>Edit</button>
             <button onClick={() => handleDeleteMeal(index)}>Delete</button>
           </div>
@@ -120,4 +144,3 @@ const NutritionPage = () => {
 };
 
 export default NutritionPage;
-

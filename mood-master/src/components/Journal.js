@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './Journal.css';
-
+import { useCreateMoodStore } from "../store/useCreateMoodStore";
+import { MoodService } from "../apiService/Apis";
+import { toast,ToastContainer } from "react-toastify";
 const JournalPage = () => {
-  const [entry, setEntry] = useState("");
+  const { createMood, setCreateMood, clearCreateMood } = useCreateMoodStore();
+  const [entry, setEntry] = useState(createMood?.journal[0]?.text || "");
   const [dailyPrompt, setDailyPrompt] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   // Array of prompts for each day
@@ -25,23 +29,38 @@ const JournalPage = () => {
     setDailyPrompt(prompts[index]);
   }, []);
 
-  const handleSave = () => {
+  const handleSave = async() => {
     // Navigate to the calendar page after saving the entry
-    navigate("/calendar");
+      try{
+      setIsLoading(true);
+      const res = await MoodService.createMood(createMood);
+      console.log(res);
+      toast.success("Entry saved successfully");
+      // navigate("/calendar");
+    }catch(error){
+      toast.error("Error saving entry");
+      console.error("Error navigating to calendar:", error);
+    }finally{
+      setIsLoading(false);
+    }
   };
-
+  const handleEntryChange = (e) => {
+    setEntry(e.target.value);
+    setCreateMood({ ...createMood, journal: [{ text: e.target.value }] });
+  };
   return (
     <div className="journal-container">
+      <ToastContainer />
       <h2>Daily Journal</h2>
       <p className="daily-prompt">{dailyPrompt}</p> {/* Display the daily prompt */}
       <textarea
         value={entry}
-        onChange={(e) => setEntry(e.target.value)}
+        onChange={handleEntryChange}
         rows="10"
         cols="50"
         placeholder="Write about your day..."
       />
-      <button onClick={handleSave}>Save Entry</button>
+      <button onClick={handleSave} disabled={isLoading}>{isLoading ? "Saving..." : "Save Entry"}</button>
     </div>
   );
 };

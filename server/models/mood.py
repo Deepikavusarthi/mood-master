@@ -33,8 +33,9 @@ class Activity(Base):
     id = Column(Integer, primary_key=True, index=True)
     mood_id = Column(Integer, ForeignKey('moods.id',ondelete='CASCADE'))
     name = Column(String(100))
-    duration = Column(Integer)  # Duration in minutes
+    duration = Column(Integer,default=0)  # Duration in minutes
     type = Column(String(50))
+    quality = Column(String(50), nullable=True)
     quantity = Column(Float, nullable=True)
     gain = Column(Float, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)

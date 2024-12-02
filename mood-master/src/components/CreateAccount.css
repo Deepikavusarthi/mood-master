@@ -3,12 +3,20 @@ body {
 }
 
 .create-account-container {
-    max-width: 900px;
-    margin: auto;
+    width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9; 
+    margin-top: 100px;
+}
+
+@media (min-width: 768px) {
+    .create-account-container {
+        width: 70%;
+    text-align: left;
+
+    }
 }
 
 .create-account-container h2 {
@@ -16,11 +24,17 @@ body {
     color: rgba(99, 43, 108, 1);
 }
 
-
 .create-account-container label {
-    margin: 10px 0 5px;
+    width: 100%;
     color: black;
     padding-right: 10px;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .create-account-container label {
+        width: 12rem;
+    }
 }
 
 .create-account-container input {
@@ -28,6 +42,13 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 15px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .create-account-container input {
+        width: 70%;
+    }
 }
 
 .create-account-container button {
@@ -38,8 +59,117 @@ body {
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+.existing-user-container {
+    margin:auto;
+    text-align: center;
+    color: black;
+    
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.existing-user-container .login-button {
+    padding-left: 10px;
+    color: #632B6C;
+    cursor: pointer;
+}   
+.existing-user-container .login-button:hover {
+    color: #C76C98;
+    text-decoration: underline;
+}
+
 
 .create-account-container button:hover {
     background-color: rgba(251, 195, 162, 0.7); 
+}body {
+    padding-top: 60px; 
+}
+
+.create-account-container {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9; 
+    margin-top: 100px;
+}
+
+@media (min-width: 768px) {
+    .create-account-container {
+        width: 70%;
+    text-align: left;
+
+    }
+}
+
+.create-account-container h2 {
+    text-align: center;
+    color: rgba(99, 43, 108, 1);
+}
+
+.create-account-container label {
+    width: 100%;
+    color: black;
+    padding-right: 10px;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .create-account-container label {
+        width: 12rem;
+    }
+}
+
+.create-account-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .create-account-container input {
+        width: 70%;
+    }
+}
+
+.create-account-container button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgba(199, 108, 152, 1); 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.existing-user-container {
+    margin:auto;
+    text-align: center;
+    color: black;
+    
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.existing-user-container .login-button {
+    padding-left: 10px;
+    color: #632B6C;
+    cursor: pointer;
+}   
+.existing-user-container .login-button:hover {
+    color: rgb(204, 92, 146);
+    text-decoration: underline;
+}
+
+
+.create-account-container button:hover {
+    background-color: rgba(204, 92, 146, 0.8); 
 }
